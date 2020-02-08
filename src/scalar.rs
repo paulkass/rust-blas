@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 use libc::{c_double, c_float, c_void};
-use num::complex::Complex;
+use num_complex::Complex;
 
 pub trait Scalar<T, S> {
     fn as_const(self) -> T;

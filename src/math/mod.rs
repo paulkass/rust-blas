@@ -2,9 +2,9 @@
 // Use of this source code is governed by a MIT-style
 // license that can be found in the LICENSE file.
 
-use matrix::Matrix;
+use crate::matrix::Matrix;
+use crate::vector::Vector;
 use std::ops::{BitXor, Deref};
-use vector::Vector;
 
 pub use self::mat::Mat;
 

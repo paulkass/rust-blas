@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 //! Matrix operations.
-use attribute::Order;
+use crate::attribute::Order;
 
 pub mod ll;
 pub mod ops;
@@ -41,7 +41,7 @@ pub trait BandMatrix<T>: Matrix<T> {
 
 #[cfg(test)]
 pub mod tests {
-    use matrix::Matrix;
+    use crate::Matrix;
 
     pub struct M<T>(pub u32, pub u32, pub Vec<T>);
 

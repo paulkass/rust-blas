@@ -5,7 +5,7 @@
 //! Bindings for matrix functions.
 
 pub mod cblas_s {
-    use attribute::{Diagonal, Order, Side, Symmetry, Transpose};
+    use crate::attribute::{Diagonal, Order, Side, Symmetry, Transpose};
     use libc::c_float;
 
     pub use self::cblas_sgemm as gemm;
@@ -107,7 +107,7 @@ pub mod cblas_s {
 }
 
 pub mod cblas_d {
-    use attribute::{Diagonal, Order, Side, Symmetry, Transpose};
+    use crate::attribute::{Diagonal, Order, Side, Symmetry, Transpose};
     use libc::c_double;
 
     pub use self::cblas_dgemm as gemm;
@@ -209,7 +209,7 @@ pub mod cblas_d {
 }
 
 pub mod cblas_c {
-    use attribute::{Diagonal, Order, Side, Symmetry, Transpose};
+    use crate::attribute::{Diagonal, Order, Side, Symmetry, Transpose};
     use libc::{c_float, c_void};
 
     pub use self::cblas_cgemm as gemm;
@@ -357,7 +357,7 @@ pub mod cblas_c {
 }
 
 pub mod cblas_z {
-    use attribute::{Diagonal, Order, Side, Symmetry, Transpose};
+    use crate::attribute::{Diagonal, Order, Side, Symmetry, Transpose};
     use libc::{c_double, c_void};
 
     pub use self::cblas_zgemm as gemm;

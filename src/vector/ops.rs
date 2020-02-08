@@ -4,14 +4,14 @@
 
 //! Wrappers for vector functions.
 
-use default::Default;
-use matrix::Matrix;
-use num::complex::{Complex, Complex32, Complex64};
-use pointer::CPtr;
-use scalar::Scalar;
+use crate::default::Default;
+use crate::matrix::Matrix;
+use crate::pointer::CPtr;
+use crate::scalar::Scalar;
+use crate::vector::ll::*;
+use crate::vector::Vector;
+use num_complex::{Complex, Complex32, Complex64};
 use std::cmp;
-use vector::ll::*;
-use vector::Vector;
 
 pub trait Copy: Sized {
     /// Copies `src.len()` elements of `src` into `dst`.
@@ -86,8 +86,8 @@ axpy_impl!(f32, f64, Complex32, Complex64);
 
 #[cfg(test)]
 mod axpy_tests {
-    use num::complex::Complex;
-    use vector::ops::Axpy;
+    use crate::vector::ops::Axpy;
+    use num_complex::Complex;
 
     #[test]
     fn real() {
@@ -155,8 +155,8 @@ scal_impl!(f32, f64, Complex32, Complex64);
 
 #[cfg(test)]
 mod scal_tests {
-    use num::complex::Complex;
-    use vector::ops::Scal;
+    use crate::vector::ops::Scal;
+    use num_complex::Complex;
 
     #[test]
     fn real() {
@@ -217,8 +217,8 @@ swap_impl!(f32, f64, Complex32, Complex64);
 
 #[cfg(test)]
 mod swap_tests {
-    use num::complex::Complex;
-    use vector::ops::Swap;
+    use crate::vector::ops::Swap;
+    use num_complex::Complex;
 
     #[test]
     fn real() {
@@ -304,8 +304,8 @@ complex_dot_impl!(Complex32, Complex64);
 
 #[cfg(test)]
 mod dot_tests {
-    use num::complex::Complex;
-    use vector::ops::Dot;
+    use crate::vector::ops::Dot;
+    use num_complex::Complex;
 
     #[test]
     fn real() {
@@ -369,8 +369,8 @@ dotc_impl!(Complex32, Complex64);
 
 #[cfg(test)]
 mod dotc_tests {
-    use num::complex::Complex;
-    use vector::ops::Dotc;
+    use crate::vector::ops::Dotc;
+    use num_complex::Complex;
 
     #[test]
     fn complex_conj() {
@@ -431,8 +431,8 @@ complex_norm_impl!(Nrm2, nrm2, Complex64, cblas_d::znrm2);
 
 #[cfg(test)]
 mod asum_tests {
-    use num::complex::Complex;
-    use vector::ops::Asum;
+    use crate::vector::ops::Asum;
+    use num_complex::Complex;
 
     #[test]
     fn real() {
@@ -461,8 +461,8 @@ mod asum_tests {
 
 #[cfg(test)]
 mod nrm2_tests {
-    use num::complex::Complex;
-    use vector::ops::Nrm2;
+    use crate::vector::ops::Nrm2;
+    use num_complex::Complex;
 
     #[test]
     fn real() {
@@ -518,8 +518,8 @@ iamax_impl!(Complex64, cblas_i::zamax);
 
 #[cfg(test)]
 mod iamax_tests {
-    use num::complex::Complex;
-    use vector::ops::Iamax;
+    use crate::vector::ops::Iamax;
+    use num_complex::Complex;
 
     #[test]
     fn real() {
@@ -577,7 +577,7 @@ rot_impl!(f32, f64);
 
 #[cfg(test)]
 mod rot_tests {
-    use vector::ops::{Rot, Scal};
+    use crate::vector::ops::{Rot, Scal};
 
     #[test]
     fn real() {

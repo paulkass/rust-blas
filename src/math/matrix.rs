@@ -2,15 +2,15 @@
 // Use of this source code is governed by a MIT-style
 // license that can be found in the LICENSE file.
 
-use attribute::Transpose;
-use default::Default;
-use math::Mat;
-use math::Trans;
-use matrix::ops::*;
-use matrix::Matrix;
-use num::complex::{Complex32, Complex64};
+use crate::attribute::Transpose;
+use crate::default::Default;
+use crate::math::Mat;
+use crate::math::Trans;
+use crate::matrix::ops::*;
+use crate::matrix::Matrix;
+use crate::vector::ops::*;
+use num_complex::{Complex32, Complex64};
 use std::ops::{Add, Mul};
-use vector::ops::*;
 
 impl<'a, T> Add for &'a dyn Matrix<T>
 where
@@ -181,9 +181,9 @@ where
 
 #[cfg(test)]
 mod tests {
-    use math::Marker::T;
-    use math::Mat;
-    use Matrix;
+    use crate::math::Marker::T;
+    use crate::math::Mat;
+    use crate::Matrix;
 
     #[test]
     fn add() {

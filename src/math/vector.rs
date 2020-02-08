@@ -2,12 +2,12 @@
 // Use of this source code is governed by a MIT-style
 // license that can be found in the LICENSE file.
 
-use default::Default;
-use math::Trans;
-use num::complex::{Complex32, Complex64};
+use crate::default::Default;
+use crate::math::Trans;
+use crate::vector::ops::*;
+use crate::vector::Vector;
+use num_complex::{Complex32, Complex64};
 use std::ops::{Add, Mul};
-use vector::ops::*;
-use vector::Vector;
 
 impl<'a, T> Add for &'a dyn Vector<T>
 where
@@ -70,9 +70,9 @@ left_scale!(f32, f64, Complex32, Complex64);
 
 #[cfg(test)]
 mod tests {
-    use math::Marker::{H, T};
-    use num::complex::Complex;
-    use Vector;
+    use crate::math::Marker::{H, T};
+    use crate::Vector;
+    use num_complex::Complex;
 
     #[test]
     fn add() {

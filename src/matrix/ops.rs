@@ -4,12 +4,12 @@
 
 //! Wrappers for matrix functions.
 
-use attribute::{Diagonal, Side, Symmetry, Transpose};
-use matrix::ll::*;
-use matrix::Matrix;
-use num::complex::{Complex, Complex32, Complex64};
-use pointer::CPtr;
-use scalar::Scalar;
+use crate::attribute::{Diagonal, Side, Symmetry, Transpose};
+use crate::matrix::ll::*;
+use crate::matrix::Matrix;
+use crate::pointer::CPtr;
+use crate::scalar::Scalar;
+use num_complex::{Complex, Complex32, Complex64};
 
 pub trait Gemm: Sized {
     fn gemm(
@@ -56,9 +56,9 @@ gemm_impl!(f32, f64, Complex32, Complex64);
 
 #[cfg(test)]
 mod gemm_tests {
-    use attribute::Transpose;
-    use matrix::ops::Gemm;
-    use matrix::tests::M;
+    use crate::attribute::Transpose;
+    use crate::matrix::ops::Gemm;
+    use crate::matrix::tests::M;
     use std::iter::repeat;
 
     #[test]

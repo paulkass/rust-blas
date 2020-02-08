@@ -5,7 +5,7 @@
 //! Bindings for matrix-vector functions.
 
 pub mod cblas_s {
-    use attribute::{Diagonal, Order, Symmetry, Transpose};
+    use crate::attribute::{Diagonal, Order, Symmetry, Transpose};
     use libc::c_float;
 
     pub use self::cblas_sgbmv as gbmv;
@@ -217,7 +217,7 @@ pub mod cblas_s {
 }
 
 pub mod cblas_d {
-    use attribute::{Diagonal, Order, Symmetry, Transpose};
+    use crate::attribute::{Diagonal, Order, Symmetry, Transpose};
     use libc::c_double;
 
     pub use self::cblas_dgbmv as gbmv;
@@ -429,7 +429,7 @@ pub mod cblas_d {
 }
 
 pub mod cblas_c {
-    use attribute::{Diagonal, Order, Symmetry, Transpose};
+    use crate::attribute::{Diagonal, Order, Symmetry, Transpose};
     use libc::{c_float, c_void};
 
     pub use self::cblas_cgbmv as gbmv;
@@ -668,7 +668,7 @@ pub mod cblas_c {
 }
 
 pub mod cblas_z {
-    use attribute::{Diagonal, Order, Symmetry, Transpose};
+    use crate::attribute::{Diagonal, Order, Symmetry, Transpose};
     use libc::{c_double, c_void};
 
     pub use self::cblas_zgbmv as gbmv;

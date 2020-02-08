@@ -2,14 +2,14 @@
 // Use of this source code is governed by a MIT-style
 // license that can be found in the LICENSE file.
 
-use attribute::Transpose;
-use default::Default;
-use math::Mat;
-use math::Trans;
-use matrix::Matrix;
-use matrix_vector::ops::*;
+use crate::attribute::Transpose;
+use crate::default::Default;
+use crate::math::Mat;
+use crate::math::Trans;
+use crate::matrix::Matrix;
+use crate::matrix_vector::ops::*;
+use crate::vector::Vector;
 use std::ops::Mul;
-use vector::Vector;
 
 impl<'a, T> Mul<&'a dyn Vector<T>> for &'a dyn Matrix<T>
 where
@@ -55,10 +55,10 @@ where
 
 #[cfg(test)]
 mod tests {
-    use math::Marker::T;
-    use math::Mat;
-    use Matrix;
-    use Vector;
+    use crate::math::Marker::T;
+    use crate::math::Mat;
+    use crate::Matrix;
+    use crate::Vector;
 
     #[test]
     fn mul() {

@@ -17,15 +17,12 @@
 //! * Level 2: `matrix_vector`
 //! * Level 3: `matrix`
 
-extern crate libc;
-extern crate num;
-
-pub use matrix::ops::*;
-pub use matrix::Matrix;
-pub use matrix_vector::ops::*;
-pub use vector::ops::*;
-pub use vector::Vector;
-pub use vector::VectorOperations;
+pub use crate::matrix::ops::*;
+pub use crate::matrix::Matrix;
+pub use crate::matrix_vector::ops::*;
+pub use crate::vector::ops::*;
+pub use crate::vector::Vector;
+pub use crate::vector::VectorOperations;
 
 #[macro_use]
 mod prefix;

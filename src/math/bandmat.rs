@@ -1,15 +1,15 @@
 // Copyright 2015 Michael Yang. All rights reserved.
 // Use of this source code is governed by a MIT-style
 // license that can be found in the LICENSE file.
-use math::Mat;
-use matrix::BandMatrix;
+use crate::math::Mat;
+use crate::matrix::BandMatrix;
+use crate::vector::ops::Copy;
+use crate::Matrix;
 use num::traits::NumCast;
 use std::fmt;
 use std::iter::repeat;
 use std::ops::Index;
 use std::slice;
-use vector::ops::Copy;
-use Matrix;
 
 #[derive(Debug, PartialEq)]
 pub struct BandMat<T> {

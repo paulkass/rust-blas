@@ -3,9 +3,9 @@
 // license that can be found in the LICENSE file.
 
 //! Vector operations.
-use num::complex::{Complex32, Complex64};
+use crate::vector::ops::{Asum, Axpy, Copy, Dot, Iamax, Nrm2, Scal};
 use num::traits::NumCast;
-use vector::ops::{Asum, Axpy, Copy, Dot, Iamax, Nrm2, Scal};
+use num_complex::{Complex32, Complex64};
 
 pub mod ll;
 pub mod ops;

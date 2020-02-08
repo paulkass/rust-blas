@@ -4,13 +4,13 @@
 
 //! Wrappers for matrix-vector functions.
 
-use attribute::{Diagonal, Symmetry, Transpose};
-use matrix::{BandMatrix, Matrix};
-use matrix_vector::ll::*;
-use num::complex::{Complex, Complex32, Complex64};
-use pointer::CPtr;
-use scalar::Scalar;
-use vector::Vector;
+use crate::attribute::{Diagonal, Symmetry, Transpose};
+use crate::matrix::{BandMatrix, Matrix};
+use crate::matrix_vector::ll::*;
+use crate::pointer::CPtr;
+use crate::scalar::Scalar;
+use crate::vector::Vector;
+use num_complex::{Complex, Complex32, Complex64};
 
 /// General multiply with vector
 ///
@@ -48,9 +48,9 @@ gemv_impl!(f32, f64, Complex32, Complex64);
 
 #[cfg(test)]
 mod gemv_tests {
-    use attribute::Transpose;
-    use matrix::tests::M;
-    use matrix_vector::ops::Gemv;
+    use crate::attribute::Transpose;
+    use crate::matrix::tests::M;
+    use crate::matrix_vector::ops::Gemv;
 
     #[test]
     fn real() {
@@ -140,9 +140,9 @@ symv_impl!(Hemv, hemv, Complex32, Complex64);
 
 #[cfg(test)]
 mod symv_tests {
-    use attribute::{Symmetry, Transpose};
-    use matrix::tests::M;
-    use matrix_vector::ops::{Gemv, Symv};
+    use crate::attribute::{Symmetry, Transpose};
+    use crate::matrix::tests::M;
+    use crate::matrix_vector::ops::{Gemv, Symv};
 
     #[test]
     fn real() {
@@ -236,8 +236,8 @@ ger_impl!(Gerc, gerc, Complex64, cblas_z::gerc);
 
 #[cfg(test)]
 mod ger_tests {
-    use matrix::tests::M;
-    use matrix_vector::ops::Ger;
+    use crate::matrix::tests::M;
+    use crate::matrix_vector::ops::Ger;
     use std::iter::repeat;
 
     #[test]

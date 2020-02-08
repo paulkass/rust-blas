@@ -3,13 +3,16 @@
 // license that can be found in the LICENSE file.
 #![macro_use]
 
+use crate::vector::ops::Copy;
+use crate::Matrix;
 use num::traits::NumCast;
 use std::fmt;
 use std::iter::repeat;
 use std::ops::Index;
 use std::slice;
-use vector::ops::Copy;
+use num::traits::NumCast;
 use Matrix;
+use vector::ops::Copy;
 
 #[derive(Debug, PartialEq)]
 pub struct Mat<T> {
@@ -166,7 +169,7 @@ macro_rules! mat(
 
 #[cfg(test)]
 mod tests {
-    use math::Mat;
+    use crate::math::Mat;
 
     #[test]
     fn index() {
